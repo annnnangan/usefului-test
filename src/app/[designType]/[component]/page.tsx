@@ -18,6 +18,10 @@ type Props = {
   }
 }
 
+export async function generateStaticParams() {
+  return [{ designType: 'development', component: 'buttons' }]
+}
+
 const ComponentPage = async ({ params }: Props) => {
   const { component } = params
   const componentInfo: UIComponentInfo | undefined = uiDescription[component]
