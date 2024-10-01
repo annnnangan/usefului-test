@@ -24,9 +24,9 @@ const ComponentPage = async ({ params }: Props) => {
   if (!componentInfo) {
     return notFound()
   }
-  const domain = 'buttontest.vercel.app'
+
   // TODO: Update fetch link
-  const installationData = await fetch(`http://${domain}/registry/button`)
+  const installationData = await fetch(`/registry/button`)
   if (!installationData.ok) {
     throw new Error(`HTTP error! status: ${installationData.status}`)
   }
