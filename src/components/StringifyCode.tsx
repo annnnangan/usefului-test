@@ -1,6 +1,4 @@
 import { readFileSync } from 'fs'
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { coldarkDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import CodeWrapper from './CodeWrapper'
 
 type Props = {
