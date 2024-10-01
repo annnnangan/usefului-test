@@ -1,4 +1,5 @@
 import { readFileSync } from 'fs'
+import { NextResponse } from 'next/server'
 import { parseImports } from 'parse-imports'
 import path from 'path'
 
@@ -11,7 +12,7 @@ export const getComponentMetadata = async (componentName: string) => {
   const knownDependencies = ['@radix-ui/']
   const imports = await parseImports(componentCode)
 
-  return Response.json({
+  return NextResponse.json({
     name: componentName,
     dependencies: Array.from(imports)
       .filter(dep =>
