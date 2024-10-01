@@ -14,7 +14,7 @@ const Breadcrumb = ({ params }: Props) => {
   const list = [
     {
       tag: 'home',
-      url: `home/${section}`
+      url: '/'
     },
     {
       tag: section,
@@ -28,7 +28,7 @@ const Breadcrumb = ({ params }: Props) => {
 
   return (
     <div className='sticky top-12 z-10 w-full bg-gray-50 py-2 sm:top-[60px]'>
-      <ul className='text-usGray-1100 flex items-center gap-1'>
+      <ul className='flex items-center gap-1 text-usGray-1100'>
         {list.map((item, index) => {
           const isCurrentPage = index === list.length - 1
           return (
