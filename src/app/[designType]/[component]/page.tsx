@@ -9,6 +9,7 @@ import SubTitle from '@/components/SubTitle'
 import CodeWrapper from '@/components/CodeWrapper'
 import { parseDescription } from '@/lib/parseDescription'
 import Image from 'next/image'
+import { getComponentMetadata } from '@/lib/components'
 
 type Props = {
   params: {
@@ -26,7 +27,7 @@ const ComponentPage = async ({ params }: Props) => {
   }
 
   // TODO: Update fetch link
-  const installationData = await fetch(`/registry/button`)
+  const installationData = await getComponentMetadata(component)
   if (!installationData.ok) {
     throw new Error(`HTTP error! status: ${installationData.status}`)
   }
